@@ -1,0 +1,64 @@
+# EXP1 — 5 FOTOS ultra-realistas 1920x1080 (mesma direção, narração e timings do F1d).
+# F1 — mesmo piloto, motor v2 (translação real + rotação + respiração + vocabulário novo).
+# A/B honesto: mesmas imagens, narração e durações do F0. Só a direção/motor mudou.
+schema: pixflow.movie/v1
+
+meta:
+  title: "Piloto F1d — motor v2, cortes secos"
+  author: "diretor-animacao"
+
+output:
+  resolution: 1920x1080
+  fps: 30
+  filename: exp1-fotos.mp4
+
+defaults:
+  look: cinema-dramatico
+  transition_out:
+    type: cut
+    duration: 0
+
+assets:
+  images:
+    - { id: deserto,  file: assets/img/p1.png }
+    - { id: planeta,  file: assets/img/p2.png }
+    - { id: rosa,     file: assets/img/p3.png }
+    - { id: raposa,   file: assets/img/p4.png }
+    - { id: estrelas, file: assets/img/p5.png }
+
+scenes:
+  # BEAT 1 — estabelecer. AERIAL (drone): abre revelando a escala do deserto, deriva + roll.
+  - id: c1_deserto
+    image: deserto
+    duration: 6.165
+    camera: { type: aerial, intensity: 1.1, amplitude: dramatico, easing: ease_in_out }
+
+  # BEAT 2 — encanto. ORBIT v2 (agora com roll + parallax reforçado): circunda o planeta.
+  - id: c2_planeta
+    image: planeta
+    duration: 7.083
+    look: sonho-etereo
+    camera: { type: orbit, intensity: 1.2, easing: ease_in_out }
+
+  # BEAT 3 — importância. PUSH IN v2 dramático (1.45×, com profundidade de dolly): a rosa toma a tela.
+  - id: c3_rosa
+    image: rosa
+    duration: 5.867
+    camera: { type: push_in, intensity: 1.1, amplitude: dramatico, easing: ease_in_out }
+
+  # BEAT 4 — ternura. TRACKING (acompanhamento lateral com parallax 1.6×): caminha com os dois.
+  - id: c4_raposa
+    image: raposa
+    duration: 6.805
+    look: sonho-etereo
+    camera: { type: tracking, direction: right, intensity: 1.1, easing: ease_in_out }
+
+  # BEAT 5 — contemplação. CRANE (grua subindo ao céu, recuando, roll suave): ascende com o olhar.
+  - id: c5_estrelas
+    image: estrelas
+    duration: 6.805
+    camera: { type: crane, intensity: 1.0, easing: ease_out }
+    transition_out: { type: dip_to_black, duration: 1.0 }
+
+audio:
+  track: assets/audio/narracao-cut.wav

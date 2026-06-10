@@ -1,0 +1,11 @@
+{
+  "lead": 0.6,
+  "scenes": [
+    { "id": "c1",  "dur": 6.165, "fadeIn": 0,   "narr": "assets/audio/n1.wav" },
+    { "id": "c2",  "dur": 7.083, "fadeIn": 0,   "narr": "assets/audio/n2.wav" },
+    { "id": "c3",  "dur": 5.867, "fadeIn": 0,   "narr": "assets/audio/n3.wav" },
+    { "id": "c4a", "dur": 3.2,   "fadeIn": 0,   "narr": "assets/audio/n4.wav" },
+    { "id": "c4b", "dur": 3.605, "fadeIn": 0.3 },
+    { "id": "c5",  "dur": 6.805, "fadeIn": 0,   "narr": "assets/audio/n5.wav" }
+  ]
+}

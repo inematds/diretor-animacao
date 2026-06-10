@@ -1,0 +1,79 @@
+# F2 DEMO — dirigido pela skill diretor-animacao (gramatica-direcao.md).
+# 5 FOTOS ultra-realistas → 6 SHOTS (a raposa vira 2: wide tracking → whip → close no focinho).
+# Alternância: aerial → orbit → framing-in → tracking → framing-in → crane (fim suspenso).
+# Transições por intenção: cut ×3 → WHIP na virada de energia → cut → fim.
+# Fotos = parallax pleno (regra A/B). Narração n4 ATRAVESSA o corte whip.
+schema: pixflow.movie/v1
+
+meta:
+  title: "F2 demo — o Diretor"
+  author: "diretor-animacao"
+
+output:
+  resolution: 1920x1080
+  fps: 30
+  filename: f2-demo.mp4
+
+defaults:
+  look: cinema-dramatico
+  transition_out: { type: cut, duration: 0 }
+
+assets:
+  images:
+    - { id: deserto,  file: assets/img/p1.png }
+    - { id: planeta,  file: assets/img/p2.png }
+    - { id: rosa,     file: assets/img/p3.png }
+    - { id: raposa,   file: assets/img/p4.png }
+    - { id: estrelas, file: assets/img/p5.png }
+
+scenes:
+  # BEAT 1 — estabelecer (único `dramatico` do filme: a abertura)
+  - id: c1_deserto
+    image: deserto
+    duration: 6.165
+    camera: { type: aerial, intensity: 1.1, amplitude: dramatico, easing: ease_in_out }
+
+  # BEAT 2 — mundo 3D → orbit
+  - id: c2_planeta
+    image: planeta
+    duration: 7.083
+    look: sonho-etereo
+    camera: { type: orbit, intensity: 1.1, easing: ease_in_out }
+
+  # BEAT 3 — detalhe citado ("uma rosa única") → framing mergulha NA rosa
+  - id: c3_rosa
+    image: rosa
+    duration: 5.867
+    camera:
+      type: framing
+      from: { zoom: 1.0,  at: [0.5, 0.5] }
+      to:   { zoom: 1.85, at: [0.47, 0.40] }
+      easing: ease_in_out
+
+  # BEAT 4a — dois sujeitos → tracking acompanha (wide)
+  - id: c4a_raposa_wide
+    image: raposa
+    duration: 3.2
+    look: sonho-etereo
+    camera: { type: tracking, direction: right, intensity: 1.0, easing: ease_in_out }
+    transition_out: { type: whip, duration: 0.3 }   # virada de energia → chicote
+
+  # BEAT 4b — burst: close no focinho da raposa (narração atravessa o corte)
+  - id: c4b_raposa_close
+    image: raposa
+    duration: 3.605
+    look: sonho-etereo
+    camera:
+      type: framing
+      from: { zoom: 1.25, at: [0.55, 0.45] }
+      to:   { zoom: 1.95, at: [0.42, 0.38] }
+      easing: ease_out
+
+  # BEAT 5 — clímax reflexivo → crane sobe ao céu; FIM SUSPENSO (movimento mais calmo)
+  - id: c5_estrelas
+    image: estrelas
+    duration: 6.805
+    camera: { type: crane, intensity: 0.9, easing: ease_out }
+
+audio:
+  track: assets/audio/narracao-f2.wav

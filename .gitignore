@@ -1,0 +1,5 @@
+*.mp4
+piloto-f0/assets/img/
+piloto-f0/assets/audio/
+snapshots/
+node_modules/
