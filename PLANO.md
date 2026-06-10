@@ -254,3 +254,18 @@ Consequências:
 - **Marigold (depth p/ ilustração) sai do caminho crítico** — vira melhoria futura opcional (b6 rebaixado).
 - Upscale (b7) continua valendo: 1920×1080 nativo melhorou visivelmente o crop do tracking no EXP1
   → gerar/preparar imagem em alta sempre que houver zoom/crop forte.
+
+## Feedback F2-demo (usuário)
+1. **"Erro no lobo e menino"** (cena raposa) — deixar pra ajustar DEPOIS. Suspeitos: borda preta
+   visível durante o deslize do whip (a cena nova entra com translateX e descobre a lateral) e/ou
+   o salto de enquadramento entre c4a (tracking termina ~wide) e c4b (framing começa 1.25× em
+   [0.55,0.45]) — raccord de posição imperfeito entre os dois shots da mesma imagem.
+2. **"Transições entre cenas fracas"** — o corte seco é invisível por gramática, mas o filme
+   narrado/contemplativo pede fronteiras com mais PRESENÇA. Candidatos a elevar:
+   - whip de verdade (as DUAS cenas se movem: a antiga sai varrendo, a nova entra varrendo +
+     blur mais forte; hoje só a nova desliza por cima = sensação fraca)
+   - push (a nova EMPURRA a antiga pra fora — momentum contínuo)
+   - match-on-motion: cortar com as duas câmeras em movimento na MESMA direção/energia
+   - flash de luz curto (1–2 frames clareando) como acento de impacto
+   - dip_to_black real entre atos (já corrigido no motor, não usado no demo)
+   - zoom_blur nas viradas de energia
