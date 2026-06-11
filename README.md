@@ -37,6 +37,10 @@ Checagem rápida: `cd ~/projetos/pixflow/skill && node cli/pixflow-motion.mjs ch
 2. No Claude Code, dê um conjunto de imagens + narração e peça: *"vira filme"*, *"anima essas imagens"*, *"dirige esse material"*.
 3. A skill mostra a **decupagem** (cena · imagem · beat · movimento · transição · duração) para aprovação antes do render.
 
+## Exemplo completo
+
+[`exemplos/pequeno-principe.md`](exemplos/pequeno-principe.md) — primeiro filme real da skill: 21 ilustrações + 22 WAVs de narração → filme de 2min11 com 26 shots, música CC0 com ducking, vento, whooshes e shimmer sintetizado. Inclui a decupagem completa, o fluxo de música/SFX via inemavox/Freesound, o pipeline comando a comando e as lições novas.
+
 ## Regras de ouro (validadas por A/B)
 
 - Foto real = parallax pleno · desenho = parallax 0.
